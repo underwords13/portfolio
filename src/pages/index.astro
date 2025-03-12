@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '@components/Navbar.astro';
+import ProfileSection from '@components/ProfileSection.astro';
+import AboutSection from '@components/AboutSection.astro';
+import ProjectsSection from '@components/ProjectsSection.astro';
+import SkillsSection from '@components/SkillsSection.astro';
+import FinalSection from '@components/FinalSection.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Enrique Resendiz - Full Stack Developer">
+  <div class="min-w-[535px] max-w-screen-sm mx-auto py-16 px-8 selection:bg-gray-600 selection:text-white">
+    <header>
+      <Navbar />
+      <ProfileSection />
+    </header>
+    <main>
+      <AboutSection />
+      <!-- <ProjectsSection /> -->
+      <SkillsSection />
+    </main>
+    <footer>
+      <FinalSection />
+    </footer>
+  </div>
 </Layout>
