@@ -1,7 +1,24 @@
 ---
-const { link } = Astro.props;
+const { link, download = false, downloadName = '', tooltipText = '' } = Astro.props;
 ---
 
-<a class="hover:bg-zinc-800 hover:border-zinc-600 border border-transparent p-2 rounded-md transition" href={link} target="_blank">
-  <slot/>
-</a>
+{
+  download ? (
+    <a
+      class="hover:bg-zinc-800 hover:border-zinc-600 border border-transparent p-2 rounded-md transition tooltip tooltip-bottom" data-tip={tooltipText}
+      href={link}
+      download={downloadName}
+    >
+      <slot />
+    </a>
+  ) : (
+    <a
+      class="hover:bg-zinc-800 hover:border-zinc-600 border border-transparent p-2 rounded-md transition tooltip tooltip-bottom" data-tip={tooltipText}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <slot />
+    </a>
+  )
+}

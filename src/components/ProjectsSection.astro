@@ -1,26 +1,35 @@
 ---
 import ProjectCard from '@components/ProjectCard.astro'
-import Typescript from '@assets/icons/typescript.astro';
-import React from '@assets/icons/react.astro';
-import Supabase from '@assets/icons/supabase.astro';
 import Tailwind from '@assets/icons/tailwind.astro';
+import Laravel from '@assets/icons/Laravel.astro';
+import Mysql from '@assets/mysql.astro';
+import Alpine from '@assets/icons/Alpine.astro';
+import SqlServer from '@assets/icons/SqlServer.astro';
+import DotNetCore from '@assets/icons/DotNetCore.astro';
+import Symfony from '@assets/icons/Symfony.astro';
 ---
 
 <section class="my-20">
   <h2 class="text-2xl font-semibold mb-2">Proyectos</h2>
   <hr class="mb-6 border-zinc-600">
 
-  <ProjectCard projectTitle="Centro Digital" projectDescription="Aplicación web que ayuda a los usuarios a buscar negocios locales cercanos, proporcionando información detallada, contactos, y mapas interactivos."
-  projectLink="https://github.com/garaven/centro-digital" image="/images/centro-digital.png">
-    <React />
-    <Supabase />
-    <Tailwind />
-    <Typescript />
+  <ProjectCard projectTitle="Datecode Monitoring System"
+  projectDescription="Aplicación web que ayuda a los usuarios a buscar negocios locales cercanos, proporcionando información detallada, contactos, y mapas interactivos."
+  >
+    <SqlServer size="size-9"/>
+    <DotNetCore size="size-9"/>
+    <Symfony size="size-9"/>
+    <img slot="image" class="object-contain shadow-xl rounded-lg md:w-52 md:mb-0 bg-white p-2" src="/images/logos/harman.png" alt="Harman image" />
   </ProjectCard>
 
-  <ProjectCard projectTitle="StockIn" projectDescription="Sistema de gestión de inventario eficiente para Pymes, que simplifica el seguimiento, el control y la optimización de los niveles de existencias para satisfacer sus necesidades específicas." projectLink="https://github.com/Gothsec/StockIn-demo" image="/images/stockin.png">
-    <React />
-    <Supabase />
-    <Tailwind />
+  <ProjectCard projectTitle="ImControl"
+  projectDescription="Sistema de gestión de campañas publicitarias en redes sociales, que simplifica el seguimiento, el control y la visualización de los datos."
+  >
+    <Laravel size="size-9"/>
+    <Alpine size="size-9"/>
+    <Mysql size="size-9"/>
+    <Tailwind size="size-9"/>
+    
+    <img slot="image" class="object-contain shadow-xl rounded-lg md:w-52 md:mb-0 bg-[#142c40] p-2" src="/images/logos/ImControl.png" alt="ImControl image" />
   </ProjectCard>
 </section>

@@ -2,15 +2,35 @@
 import Github from "@assets/icons/github.astro"
 import Email from "@assets/icons/email.astro"
 import ContainerHover from "@components/ContainerHover.astro"
+import Cv from "@assets/icons/Cv.astro";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="w-full flex justify-between items-center">
-  <a class="text-xl hover:opacity-60 transition " href="/files/CV.pdf" download="Enrique-Resendiz-CV.pdf">CV</a>
+
+  {/* Mostrar "Curriculum" solo si NO estamos en /curriculum */}
+  {currentPath !== "/curriculum" && 
+    <a class="text-xl hover:opacity-60 transition" href="/curriculum">Curriculum</a>
+  }
+
+  {/* Mostrar "Inicio" solo si NO estamos en la página raíz */}
+  {currentPath !== "/" && 
+    <a class="text-xl hover:opacity-60 transition" href="/">Inicio</a>
+  }
   <div class="flex gap-3 items-center">
-    <ContainerHover link="mailto:k.ventus250@gmail.com">
+    <ContainerHover 
+    link="/files/CV.pdf" 
+    download 
+    downloadName="Enrique-Resendiz-CV.pdf"
+    tooltipText="Descargar CV"
+  >
+  <Cv />  
+  </ContainerHover>
+    <ContainerHover link="mailto:k.ventus250@gmail.com" tooltipText="Enviar correo electrónico">
       <Email />
     </ContainerHover>
-    <ContainerHover link="https://github.com/underwords13">
+    <ContainerHover link="https://github.com/underwords13" tooltipText="Enlace al perfil de GitHub">
       <Github />
     </ContainerHover>
   </div>
