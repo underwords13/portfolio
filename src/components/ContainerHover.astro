@@ -1,5 +1,5 @@
 ---
-const { link, download = false, downloadName = '', tooltipText = '' } = Astro.props;
+const { link, download = false, downloadName = '', tooltipText = '', ariaLabel } = Astro.props;
 ---
 
 {
@@ -7,6 +7,7 @@ const { link, download = false, downloadName = '', tooltipText = '' } = Astro.pr
     <a
       class="hover:bg-zinc-800 hover:border-zinc-600 border border-transparent p-2 rounded-md transition tooltip tooltip-bottom" data-tip={tooltipText}
       href={link}
+      aria-label={ariaLabel}
       download={downloadName}
     >
       <slot />
@@ -17,6 +18,7 @@ const { link, download = false, downloadName = '', tooltipText = '' } = Astro.pr
       href={link}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={ariaLabel}
     >
       <slot />
     </a>

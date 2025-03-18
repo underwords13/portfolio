@@ -1,0 +1,130 @@
+---
+import type { Experience } from 'src/interfaces/experience.interface';
+import ExperienceItem from './ExperienceItem.astro';
+
+const experiences: Experience[] = [
+  {
+    company: "HARMAN DE MEXICO S. DE R.L. DE C.V.",
+    duration: "Agosto 2024 - Febrero 2025",
+    position: "Fullstack Development Intern",
+    description: [
+      "Administración de bases de datos MS SQL Server para el desarrollo de soluciones en el área de recibos electrónicos.",
+      "Construcción y mantenimiento de API Rest con ASP.Net Core y Symfony.",
+      "Diseño, desarrollo y mejora al módulo de MODI en el sistema interno SmartWh.",
+      "Manejo de Autonomous Mobile Robots (AMR) para el surtimiento de material en líneas de producción.",
+      "Documentación de APIs en POSTMAN.",
+      "Implementación del módulo Datecode Monitoring System.",
+      "Implementación de E-Labels en producción."
+    ],
+    technologies: [
+      "SQL Server",
+      "ASP.Net Core",
+      "Symfony",
+      "AMR",
+      "POSTMAN",
+      "Datecode Monitoring System",
+      "E-Labels"
+    ]
+  },
+  {
+    company: "Centro de desarrollo - Facultad de Informática UAQ",
+    duration: "Marzo 2024 - Julio 2024",
+    position: "Fullstack Developer",
+    description: [
+      "Desarrollo de 'Changarrito FIF', un ecommerce para promocionar productos y servicios ofertados por los alumnos de la Facultad de Informática UAQ.",
+      "Implementación de un sistema de autenticación con Next.js y Prisma.",
+      "Diseño de base de datos con MySQL y optimización de consultas.",
+      "Estilización avanzada con Tailwind CSS."
+    ],
+    technologies: ["Next.js", "Prisma", "TypeScript", "MySQL", "TailwindCSS"]
+  },
+  {
+    company: "Centro de desarrollo - Facultad de Informática UAQ",
+    duration: "Enero 2024 - Julio 2024",
+    position: "Fullstack Developer / DB Admin",
+    description: [
+      "Administración de bases de datos.",
+      "Construcción de API Rest con Prisma y Next.js.",
+      "Diseño y desarrollo de plataforma para registrar talleres deportivos."
+    ],
+    technologies: [
+      "SQL Server",
+      "Prisma",
+      "Next.js",
+      "Talleres deportivos"
+    ]
+  },
+  {
+    company: "Facultad de Medicina UAQ",
+    duration: "Mayo 2023 - Septiembre 2023",
+    position: "Fullstack Developer",
+    description: [
+      "Diseño y desarrollo de sistemas web para la administración de los alumnos de intercambio en la Facultad de Medicina UAQ.",
+      "Diseño y desarrollo de pantallas en Visual Builder."
+    ],
+    technologies: [
+      "Laravel",
+      "Angular",
+      "Visual Builder"
+    ]
+  },
+  {
+    company: "Grupo TI México",
+    duration: "Enero 2023 - Enero 2024",
+    position: "CONSULTOR TÉCNICO ORACLE JR",
+    description: [
+      "Diseño y desarrollo de sistemas web.",
+      "Desarrollo de integraciones con OIC y OFC.",
+      "Diseño y desarrollo de pantallas en Visual Builder.",
+      "Diseño y desarrollo de sistemas web con Laravel y Angular."
+    ],
+    technologies: [
+      "Laravel",
+      "Angular",
+      "OIC",
+      "OFC",
+      "Visual Builder"
+    ]
+  },
+  {
+    company: "Grupo TI México",
+    duration: "Agosto 2022 - Enero 2023",
+    position: "INTERN CONSULTOR TÉCNICO ORACLE JR",
+    description: [
+        "Desarrollo de una integración con OIC y OFC.",
+      "Diseño y desarrollo de una pantalla en Visual Builder."
+    ],
+    technologies: [
+      "OIC",
+      "OFC",
+      "Visual Builder"
+    ]
+  },
+  // {
+  //   company: "HARMAN DE MEXICO S. DE R.L. DE C.V. (Logro)",
+  //   duration: "Diciembre 2024",
+  //   position: "FULLSTACK DEVELOPMENT INTERN",
+  //   description: [
+  //     "Ganador del 3er lugar en los Intern Awards con el proyecto 'Datecode Monitoring System'."
+  //   ],
+  //   technologies: [
+  //     "SQL Server",
+  //     "ASP.Net Core",
+  //     "Symfony",
+  //     "AMR",
+  //     "POSTMAN",
+  //     "Datecode Monitoring System",
+  //     "E-Labels"
+  //   ]
+  // }
+];
+
+const isLeft = (index: number) => index % 2 === 0;
+---
+<div>
+  <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+    {experiences.map((exp, index) => (
+      <ExperienceItem key={index} {...exp} isLeft={isLeft(index)} />
+    ))}
+  </ul>
+</div>

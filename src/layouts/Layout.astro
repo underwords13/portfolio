@@ -3,30 +3,30 @@ import "../styles/global.css";
 const title = Astro.props.title;
 ---
 
-<!doctype html>
-<html lang="es">
+<!doctype html >
+<!-- Change theme after -->
+<html lang="es" data-theme="dark">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta charset="UTF-8">
+		<!-- <script is:inline>
+			if (localStorage.getItem("theme") === null) {
+			  document.documentElement.setAttribute("data-theme", "light");
+			} else
+			  document.documentElement.setAttribute(
+				"data-theme",
+				localStorage.getItem("theme")
+			  );
+		  </script>
+		  <script>
+			import { themeChange } from 'theme-change';
+			themeChange();
+		</script> -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 		<title>{title}</title>
 	</head>
-	<body>
+	<body >
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		font-family: 'Lora', sans-serif;
-		background-color: #181818;
-		color: #fff;
-	}
-</style>

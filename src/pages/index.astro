@@ -6,10 +6,11 @@ import ProjectsSection from '@components/ProjectsSection.astro';
 import SkillsSection from '@components/SkillsSection.astro';
 import FinalSection from '@components/FinalSection.astro';
 import Layout from '@layouts/Layout.astro';
+import CertificationSection from '@components/CertificationSection.astro';
 ---
 
 <Layout title="Enrique Resendiz - Full Stack Developer">
-  <div class="min-w-[535px] max-w-screen-sm mx-auto py-16 px-8 selection:bg-gray-600 selection:text-white">
+  <div class="min-w-4xl max-w-screen-sm mx-auto py-16 px-8 selection:bg-gray-600 selection:text-white">
     <header>
       <Navbar />
       <ProfileSection />
@@ -18,6 +19,7 @@ import Layout from '@layouts/Layout.astro';
       <AboutSection />
       <ProjectsSection />
       <SkillsSection />
+      <CertificationSection />
     </main>
     <footer>
       <FinalSection />

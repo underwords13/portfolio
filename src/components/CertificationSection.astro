@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+
+const certifications = [
+  { 
+    name: "Azure AZ-900", 
+    issuer: "Microsoft", 
+    year: 2024, 
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg",
+    width: 50,
+    height: 50
+  },
+  { 
+    name: "Oracle Database Administration 2019", 
+    issuer: "Oracle", 
+    year: 2024, 
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg",
+    width: 60,
+    height: 40
+  }
+];
+---
+<div class="mt-6">
+  <h3 class="text-xl font-semibold mb-2">Certificaciones</h3>
+  <ul class="space-y-4">
+    {certifications.map((cert) => (
+      <li class="flex items-center gap-4 p-4 border rounded-lg bg-zinc-800 border-zinc-700">
+        <Image 
+          src={cert.image} 
+          alt={cert.name} 
+          width={cert.width} 
+          height={cert.height} 
+          class="object-contain"
+        />
+        <div>
+          <span class="text-lg font-medium text-zinc-900 dark:text-zinc-100">{cert.name}</span>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400">
+            {cert.issuer}
+             {/* ({cert.year}) */}
+            </p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</div>
