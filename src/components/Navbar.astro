@@ -4,20 +4,9 @@ import Email from "@assets/icons/email.astro"
 import ContainerHover from "@components/ContainerHover.astro"
 import Cv from "@assets/icons/Cv.astro";
 // import ToggleTheme from "@components/ToggleTheme.astro";
-const currentPath = Astro.url.pathname;
 ---
 
-<nav class="w-full flex justify-between items-center">
-
-  {/* Mostrar "Experiencia" solo si NO estamos en /experiencia */}
-  {currentPath !== "/experiencia" && 
-    <a class="text-xl hover:opacity-60 transition" href="/experiencia">Experiencia</a>
-  }
-
-  {/* Mostrar "Inicio" solo si NO estamos en la página raíz */}
-  {currentPath !== "/" && 
-    <a class="text-xl hover:opacity-60 transition" href="/">Inicio</a>
-  }
+<nav class="w-full flex justify-center items-center">
   <div class="flex gap-3 items-center">
     <ContainerHover 
     link="/files/CV.pdf" 
